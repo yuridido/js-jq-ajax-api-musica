@@ -1,11 +1,11 @@
 $(document).ready(function() {
+    // creo il layout tramite la richiesta ajax
     $.ajax(
         {
             url: "https://flynn.boolean.careers/exercises/api/array/music",
             method: "GET",
             success: function (data) {
                 var dischi = data.response;
-                console.log(dischi);
                 var source = document.getElementById("entry-template").innerHTML;
                 var template = Handlebars.compile(source);
                 for (i = 0; i < dischi.length; i++) {
@@ -16,7 +16,22 @@ $(document).ready(function() {
             error: function (richiesta, stato, errori) {
                 alert("E' avvenuto un errore. " + errore);
             }
+        }
+    );
+
+    // vado a gestire il click sulla select
+    $('#generi option').click(function() {
+        var confronto = $(this).val()
+        $('.cd').each(function() {
+            if ($(this).hasClass(confronto)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
         });
+
+    });
+
 
 
 
