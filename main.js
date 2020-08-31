@@ -20,8 +20,9 @@ $(document).ready(function() {
     );
 
     // vado a gestire il click sulla select
-    $('#generi option').click(function() {
+    $('#generi').change(function() {
         var confronto = $(this).val()
+        console.log(confronto);
         $('.cd').each(function() {
             if ($(this).hasClass(confronto)) {
                 $(this).show();
@@ -41,7 +42,7 @@ $(document).ready(function() {
 });
 
 // FUNZIONI
-function inserimento(disco) {
-    (disco);
-    $()
-};
+// function inserimento(disco) {
+//     (disco);
+//     $()
+// };
