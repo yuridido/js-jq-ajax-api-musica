@@ -20,6 +20,7 @@ $(document).ready(function() {
     );
 
     // vado a gestire il click sulla select
+    //uso il change perchè il click non funziona su chrome
     $('#generi').change(function() {
         var confronto = $(this).val()
         console.log(confronto);
